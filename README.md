@@ -6,7 +6,7 @@ This project involves building an end-to-end data pipeline using various Azure s
 
 ## Architecture
 
-![Architecture Diagram](./path-to-architecture-diagram.png)
+![Architecture Diagram](Images/arch_diag.png)
 
 ### Key Components:
 1. **Azure Data Factory (ADF)**
@@ -29,7 +29,7 @@ This project involves building an end-to-end data pipeline using various Azure s
    - The final business-level data is visualized in Power BI, providing insights and reporting for stakeholders.
 
 ## Pipeline Workflow
-
+![ALL_pipeline](Images/all_pipe.png)
 ### Step 1: Data Extraction
 - Data is extracted from an on-premise SQL Server database using **Azure Data Factory**. The pipeline captures metadata (such as table names) and dynamically loops through all tables.
 
@@ -41,11 +41,14 @@ This project involves building an end-to-end data pipeline using various Azure s
 
 ### Step 3: Data Transformation
 - Using **Azure Databricks**, the data is transformed from raw form to structured formats (Bronze to Silver) and further into business aggregates (Silver to Gold).
+- [Bronze To Silver NoteBook](https://github.com/kareemNagah/Data-Pipeline-Project-Using-Azure-Data-Factory-Azure-Databricks-and-Azure-Synapse/blob/main/Transform/bronze%20to%20silver.ipynb)
+- [Silver To Gold NoteBook](https://github.com/kareemNagah/Data-Pipeline-Project-Using-Azure-Data-Factory-Azure-Databricks-and-Azure-Synapse/blob/main/Transform/silver%20to%20gold.ipynb)
 
 ### Step 4: Data Analysis
-- The transformed and aggregated data is loaded into **Azure Synapse Analytics** for advanced querying and analytics.
+- The transformed and aggregated data is loaded into **Azure Synapse Analytics** for [creating views for database tables using SQL stored procedure](https://github.com/kareemNagah/Data-Pipeline-Project-Using-Azure-Data-Factory-Azure-Databricks-and-Azure-Synapse/blob/main/sp_CreateSQLServerlessView_gold.sql)
 
 ### Step 5: Data Visualization
+  ![Sales Dashboard](Images/Sales_dashboard_azure.png)
 - **Power BI** connects to Azure Synapse to provide business-ready insights via dashboards and reports.
 
 ## Key Learnings and Takeaways
@@ -55,19 +58,6 @@ This project involves building an end-to-end data pipeline using various Azure s
 - **Cloud Scalability:** Leveraged Azure's scalable infrastructure for data engineering tasks.
 - **Data Quality:** Ensured data reliability and quality through the transformation stages.
 
-## How to Run the Project
-
-### Prerequisites:
-- An active Azure subscription.
-- Access to an on-premise SQL Server database (for the data source).
-- Familiarity with Azure services like Data Factory, Databricks, Synapse, and Power BI.
-
-### Steps:
-1. Clone the repository and open in your IDE.
-2. Set up **Azure Data Factory** and configure linked services to your on-premise SQL Server and Azure Data Lake Gen2.
-3. Create a Delta table structure in **Azure Databricks**.
-4. Set up **Azure Synapse Analytics** for querying and analysis.
-5. Connect **Power BI** to Synapse to visualize the final data.
 
 ## Technologies Used
 
@@ -78,16 +68,8 @@ This project involves building an end-to-end data pipeline using various Azure s
 - **Power BI**: Visualization of business insights.
 - **SQL Server**: Source of raw data.
 
-## Screenshots
-
-1. **Pipeline Overview**
-   ![Pipeline Overview](./path-to-pipeline-overview.png)
-
-2. **Bronze-Silver-Gold Architecture**
-   ![Bronze-Silver-Gold Architecture](./path-to-bronze-silver-gold-diagram.png)
-
-3. **Data Flow Details**
-   ![Data Flow](./path-to-data-flow.png)
+## Data 
+[Microsoft Adventure Works Light version](data/AdventureWorksLT2017.bak)
 
 ---
 
