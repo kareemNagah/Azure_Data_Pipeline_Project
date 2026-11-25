@@ -4,6 +4,12 @@
 
 This project involves building an end-to-end data pipeline using various Azure services, including **Azure Data Factory (ADF)**, **Azure Data Lake Gen2**, **Azure Databricks**, **Azure Synapse Analytics**, and **Power BI**. The pipeline extracts data from an on-premise SQL Server database, processes it using the Delta Lake architecture, and delivers business-ready insights.
 
+## Pipeline walkthrough
+
+[![Architecture → ingestion → transformation → reporting](docs/media/pipeline-tour.gif)](docs/media/pipeline-tour.mp4)
+
+[Watch the video](docs/media/pipeline-tour.mp4) · [View the static architecture diagram](Images/arch_diag.png)
+
 ## Architecture
 
 ![Architecture Diagram](Images/arch_diag.png)
